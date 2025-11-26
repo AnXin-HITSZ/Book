@@ -125,6 +125,7 @@ def load_mnist(normalize=True, flatten=True, one_hot_label=False):
     # 3. 数据归一化
     #   将像素从整数 (0 ~ 255) 转为浮点数 (0.0 ~ 1.0)
     #   有助于梯度下降算法更稳定、训练更快
+    # 像这样把数据限定到某个范围内的处理称为正规化（normalization）
     if normalize:
         for key in ('train_img', 'test_img'):
             dataset[key] = dataset[key].astype(np.float32)
